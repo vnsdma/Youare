@@ -7,7 +7,7 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="style.css" />
 	  <style type="text/css">
-	@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+	  @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -78,12 +78,11 @@ p {
 .midnight {
   color: #2c3e50;
 }
-
 	  </style>
 	</head>
 	<body onload="init_auto()">
 		<div class="text">
-  <p>You are&nbsp;</p>
+  <p>Black is&nbsp;</p>
   </span>
     <span class="word wisteria">beautiful.
 </span>
@@ -104,7 +103,71 @@ p {
     <span class="word green">hip.</span>
     <span class="word midnight">wealth.</span
   </p>
-</div>	</div>
+</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			gaming=false;
+			tombol=false;
+			$(".panah").click(function(){
+				if (tombol==false){
+					$(".panah").css("transform","rotate(225deg)");
+					$(".kontrol").animate({left: "0px"});
+					tombol=true;
+				}else if (tombol==true){
+					$(".panah").css("transform","rotate(45deg)");
+					$(".kontrol").animate({left: "-220px"});
+					tombol=false;
+				}
+			});
+			auto=true;
+			cek=false;
+			$(".kontrol").click(function(){
+				gaming=false;
+				if($("#customRadio0").prop('checked')){
+					if(!cek){
+						init_auto();
+					}
+					auto=true;
+					cek=true;
+				}
+				else{
+					auto=false;
+					cek=false;
+				}
+				if($("#customRadio1").prop('checked')){
+					ubuntu();
+				}
+				else if($("#customRadio2").prop('checked')){
+					dawn();
+				}
+				else if($("#customRadio3").prop('checked')){
+					morning();
+				}
+				else if($("#customRadio4").prop('checked')){
+					noon();
+				}
+				else if($("#customRadio5").prop('checked')){
+					afternoon();
+				}
+				else if($("#customRadio6").prop('checked')){
+					sunset();
+				}
+				else if($("#customRadio7").prop('checked')){
+					evening();
+				}
+				else if($("#customRadio8").prop('checked')){
+					midnight();
+				}
+				else if($("#customRadio9").prop('checked')){
+					gaming1();
+					gaming=true;
+				}
+				if (gaming==false){
+					nofill();
+				}
+			});
 		var words = document.getElementsByClassName('word');
 var wordArray = [];
 var currentWord = 0;
@@ -160,6 +223,11 @@ function splitLetters(word) {
 changeWord();
 setInterval(changeWord, 4000);
 
+
+					setTimeout(typeWriter, speed);
+				}
+			}
+			typeWriter();
 		</script>
 	</body>
 </html>
